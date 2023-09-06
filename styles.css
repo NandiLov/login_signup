@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 10% 15%;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    transition: transform 0.6s;
+}
+
+.form-container h1 {
+    font-weight: bold;
+}
+
+input {
+    border: none;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateX(0);
+    transition: transform 0.6s;
+}
+
+.overlay-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay-right {
+    transform: translateX(100%);
+}
+
+.ghost {
+    background: transparent;
+    border: 1px solid #007BFF;
+    color: #007BFF;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-container {
+        margin: 10% auto;
+    }
+
+    .overlay-container {
+        width: 100%;
+    }
+}
+
